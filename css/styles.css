@@ -2,4 +2,15 @@
   text-align: center;
 }
 
-canvas { background: #eee; }
+#canvDiv {
+  margin-top: 20px;
+  text-align: center;
+}
+
+canvas {
+  background: #eee;
+}
+
+#stuffCol {
+  text-align: center;
+}

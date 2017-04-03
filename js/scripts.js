@@ -21,6 +21,13 @@ $(document).ready(function() {
   var y = canvas.height-30;
   var dx = 2;
   var dy = -2;
+  var mySpeed = 30;
+
+  var thisInterval;
+
+  function myInterval(tmpSpeed){
+    thisInterval = setInterval(draw, tmpSpeed);
+  }
 
   function drawBall() {
       ctx.beginPath();
@@ -33,15 +40,46 @@ $(document).ready(function() {
   function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawBall();
+      checkBounds();
       x += dx;
       y += dy;
   }
 
-  // FRONT END
-  $("button").click(function() {
+  function checkBounds() {
+    if (x >= (canvas.width - 10)) {
+      dx = -2;
+    }
+    if (x <= 10) {
+      dx = 2;
+    }
+    if (y >= (canvas.height - 10)) {
+      dy = -2;
+    }
+    if (y <= 10) {
+      dy = 2;
+    }
+  }
 
-    setInterval(draw, 30);
-    // draw();
+
+  // FRONT END
+  $("button#go").click(function() {
+    clearInterval(thisInterval);
+    myInterval(30);
+  });
+
+  $("button#faster").click(function() {
+    clearInterval(thisInterval);
+    mySpeed -= 10;
+    myInterval(mySpeed);
 
   });
+
+  $("button#slower").click(function() {
+    clearInterval(thisInterval);
+    mySpeed += 10;
+    myInterval(mySpeed);
+  });
+
+
+
 });

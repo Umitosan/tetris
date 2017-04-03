@@ -10,9 +10,27 @@
   <body>
     <h1 class="jumbotron"> Tetris </h1>
 
-       <canvas id="myCanvas" width="480" height="320"></canvas>
+    <div class="container">
 
-       <button type="button" name="button" class="btn btn-success">Press me</button>
-       
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div id="stuffCol" class="col-sm-4">
+          <button id="go" type="button" name="button" class="btn btn-success">Go!</button>
+          <button id="faster" type="button" name="button" class="btn btn-warning">Faster</button>
+          <button id="slower" type="button" name="button" class="btn btn-info">Slower</button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+
+      <div id="canvDiv">
+        <canvas id="myCanvas" width="200" height="200"></canvas>
+      </div>
+
+
+
+    </div>
+
   </body>
 </html>
