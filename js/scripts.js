@@ -22,7 +22,6 @@ $(document).ready(function() {
   var dx = 2;
   var dy = -2;
   var mySpeed = 30;
-
   var thisInterval;
 
   function myInterval(tmpSpeed){
